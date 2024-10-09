@@ -1,0 +1,29 @@
+COPY R1 200 //address of head of linked list
+COPY R2 1  	//variable to increment with
+COPY R3 200 //size of the linked list
+COPY R4 10	//number being store
+COPY R5 10	//number to increment number being stored with
+COPY R6 0	//value to count to 20 with
+COPY R7 20	//how many times we want the loop to run
+CALL 17		//calls the linkedlist add function
+MATH ADD R5 R4
+MATH ADD R2 R6
+BRANCH LESS R6 R7 -4 // loops to add all 20 numbers to the linked list. The first value is 10 and the last one is 200
+COPY R11 200
+CALL 24		//calls the linkedlist get function
+MATH ADD R12 R13 //should correctly hold the value 2100 as the addition of the numbers in the linked list
+MATH ADD R2 R11
+BRANCH LESS R11 R3 -4	//loops to add all 20 numbers in the linked list
+HALT
+COPY R9 199
+COPY R10 1
+MATH ADD R10 R9
+BRANCH LESS R9 R3 -2	//loops through the linkedlist starting from the head to add a value at the end of the list
+STORE R4 R9
+MATH ADD R2 R3
+RETURN
+COPY R9 200
+LOAD R9 R12
+MATH ADD R10 R9
+BRANCH LESSOREQUAL R9 R11 -3 //loops through the linkedlist starting fromm the head to find the current value
+RETURN

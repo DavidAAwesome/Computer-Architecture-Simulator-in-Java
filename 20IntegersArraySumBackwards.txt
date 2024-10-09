@@ -1,0 +1,21 @@
+COPY R1 200 			//address of the head of the array
+COPY R2 10				//number to add to the array
+COPY R3 0				//value to count to 20 with
+COPY R4 20				//how many times we want the loop to run
+COPY R5 1				//value to increment with
+COPY R6 10				//value to increment number being stored with
+STORE R2 R1
+MATH ADD R5 R1
+MATH ADD R6 R2
+MATH ADD R5 R3
+BRANCH LESS R3 R4 -5	//loops to add all elements to the array
+COPY R10 219
+COPY R1 200
+COPY R2 1
+COPY R3 0
+COPY R4 20
+LOAD R10 R5
+MATH ADD R5 R3			//holds the final value of adding all the elements
+MATH SUBTRACT R2 R10
+BRANCH GREATEROREQUAL R10 R1 -4	//loops to add all elements that are in the array starting from the last one
+HALT
