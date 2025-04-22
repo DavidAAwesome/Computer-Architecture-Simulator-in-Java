@@ -28,5 +28,3 @@ The **Computer Architecture Simulator** is a Java-based project that emulates a 
 - Supports stack operations via a `StackPointer`
 - Maintains internal registers and handles control flow
 
-## 🗃 File Structure
-
